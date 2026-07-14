@@ -862,7 +862,15 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'active';
                         doc.styles.tableHeader.fontSize = 9;
                         doc.styles.tableHeader.fillColor = '#3498db';
                         doc.styles.tableHeader.color = '#ffffff';
-                        doc.content[1].table.widths = Array(doc.content[1].table.body[0].length).fill('*');
+
+
+                        var tableNode = doc.content.find(function(item){
+                            return item.table;
+                        });
+                        if (tableNode = doc.content.find(function(item) {
+                            tableNode.table.widths = 
+                                Array(tableNode.table.body[0].length).fill('*');
+                        } 
                     }
                 },
                 {
